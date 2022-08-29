@@ -53,6 +53,7 @@ console.log(name,value);
         formRouter={formRouter}
         email={email}
         pass={password}/>}
+        
         {fromload ==="reset" &&  <Resetpassword 
         handleOnChange={handleOnChange}
         handleOnResetSubmit={handleOnResetSubmit}
