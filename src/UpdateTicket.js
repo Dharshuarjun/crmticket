@@ -1,7 +1,7 @@
 import React from 'react'
 import {Form,Button} from "react-bootstrap";
 import PropTypes from "prop-types";
-import Messagehistory from './Messagehistory';
+// import Messagehistory from './Messagehistory';
 
 function UpdateTicket ({msg,handleOnChange,handleOnSubmit}){
   return (

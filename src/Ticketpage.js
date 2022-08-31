@@ -4,13 +4,23 @@ import PageBreadcrumb from "./Breadcrumb";
 import tickets from "./dummy-tickets.json"
 import Messagehistory from './Messagehistory';
 import UpdateTicket from './UpdateTicket';
+import { useParams } from 'react-router-dom';
 
-const ticket=tickets[0]
+// const ticket=tickets[0];
 function Ticketpage(){
+const {tId}=useParams()
     const [message, setMessage] = useState("");
-    useEffect(() => {
-     
-    }, [message])
+    const [ticket, setTicket] = useState("");
+    useEffect((
+       
+    ) => {
+        for(let i=0;i<tickets.length;i++){
+            if(tickets[i].id == tId){
+                setTicket(tickets[i])
+                continue
+            }
+        }
+    }, [message,tId]);
     
     const handleOnChange = (e) => {
         setMessage(e.target.value);
@@ -27,6 +37,7 @@ function Ticketpage(){
         </Row>
         <Row>
             <Col className="text-weight-bolder text-secondary">
+                {tId}
             <div className="subject">Subject:{ticket.subject}</div>
             <div className="date">Ticket Opened:{ticket.addedAt}</div>
             <div className="status">Status:{ticket.status}</div>
@@ -37,7 +48,8 @@ function Ticketpage(){
         </Row>
         <Row className="mt-4">
         <Col>
-        <Messagehistory msg={ticket.history}/>
+        {ticket.history && <Messagehistory msg={ticket.history}/>}
+        
         </Col>
         </Row>
         <hr/>

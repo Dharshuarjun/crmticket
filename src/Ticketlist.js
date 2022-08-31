@@ -33,7 +33,8 @@ const Ticketlist = () => {
 
       <Row>
         <Col>
-          <Button variant="info">Add New Ticket</Button>
+        <a href="/add-ticket"><Button variant="info">Add New Ticket</Button></a>
+          
         </Col>
         <Col className="text-right">
           <Searchform handleOnChange={handleOnChange} str={str} />

@@ -13,7 +13,9 @@ const Dashboard = () => {
             <PageBreadcrumb page="Dashboard"/></Col>
         </Row>
         <Row>
-            <Col className="text-center mt-5 mb-2"><Button style={{fontSize:"2rem",padding:"10px 30px"}}>Add new ticket</Button>
+            <Col className="text-center mt-5 mb-2">
+                <a href="/add-ticket"><Button style={{fontSize:"2rem",padding:"10px 30px"}}>Add new ticket</Button></a>
+                
             </Col>
         </Row>
         <Row>

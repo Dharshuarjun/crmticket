@@ -1,23 +1,30 @@
-import React from 'react';
-import {Navbar,Nav} from "react-bootstrap";
+import React from "react";
+import { Navbar, Nav } from "react-bootstrap";
 import logo from "./crm-logo.png";
-
-const Header = () => {
+import { Link,NavLink,useHistory } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
+import Dashboard from "./Dashboard";
+export const Header = () => {
+  const history = useHistory();
+  const LogmeOut = () => {
+    history.push("/");
+  };
   return (
-    <Navbar
-    collapseOnSelect bg="info"variant="dark"expand="md">
+    <Navbar collapseOnSelect bg="info" variant="dark" expand="md">
+      <Navbar.Brand>
+        <img src={logo} alt="img" width="50px" />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ms-auto">
+          <a href="/dashboard">Dashboard</a>
+            <a href="/tickets">Tickets</a>
+            <a href="/">Logout</a>
         
-        <Navbar.Brand><img src={logo}alt="img" width="50px"/></Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-        <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className='ms-auto'>
-            <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-            <Nav.Link href="/dashboard">Tickets</Nav.Link>
-            <Nav.Link href="/dashboard">Logout</Nav.Link>
         </Nav>
-        </Navbar.Collapse>
+      </Navbar.Collapse>
     </Navbar>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

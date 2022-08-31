@@ -2,7 +2,7 @@ import React from 'react';
 import {Table} from "react-bootstrap";
 import PropTypes from"prop-types";
 const TicketTable = ({tickets}) => {
-    if(!tickets.length)
+    // if(!tickets.length)
   return (
    <Table striped bordered hover>
      <thead>
@@ -18,7 +18,9 @@ const TicketTable = ({tickets}) => {
              tickets.map((row)=>(
                 <tr key={row.id}>
                 <td>{row.id}</td>
-                <td>{row.subject}</td>
+                <td>
+                    
+                    <a href={`/ticket/${row.id}`}>{row.subject}</a></td>
                  <td>{row.status}</td>
                   <td>{row.addedAt}</td>
             </tr>
